@@ -101,6 +101,3 @@ JOIN Participantes P ON I.id_participante = P.id_participante
 GROUP BY P.nome
 HAVING COUNT(I.id_evento) > 1;
 
--- 2. Criar uma interface simples em SQL para interagir com o sistema:
--- (Os comandos SQL fornecidos acima já permitem interação direta com o banco de dados para criar, consultar, atualizar e deletar dados)
-
