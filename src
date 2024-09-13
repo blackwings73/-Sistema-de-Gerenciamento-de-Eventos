@@ -1,0 +1,61 @@
+# Sistema de Gerenciamento de Eventos
+
+Este repositório contém o esquema de banco de dados para um sistema de gerenciamento de eventos. O banco de dados é projetado para armazenar informações sobre eventos, participantes e inscrições.
+
+## Estrutura do Banco de Dados
+
+O banco de dados possui as seguintes tabelas:
+
+- **Eventos**
+  - `id_evento` (INT, PK, AUTO_INCREMENT): Identificador único do evento.
+  - `nome_evento` (VARCHAR(100)): Nome do evento.
+  - `data` (DATE): Data do evento.
+  - `local` (VARCHAR(255)): Local onde o evento será realizado.
+  - `descricao` (TEXT): Descrição do evento.
+
+- **Participantes**
+  - `id_participante` (INT, PK, AUTO_INCREMENT): Identificador único do participante.
+  - `nome` (VARCHAR(100)): Nome do participante.
+  - `email` (VARCHAR(100), UNIQUE): Endereço de e-mail do participante.
+  - `telefone` (VARCHAR(20)): Número de telefone do participante.
+
+- **Inscricoes**
+  - `id_inscricao` (INT, PK, AUTO_INCREMENT): Identificador único da inscrição.
+  - `id_evento` (INT, FK): Referência ao evento.
+  - `id_participante` (INT, FK): Referência ao participante.
+  - `data_inscricao` (DATE): Data da inscrição.
+
+## Scripts SQL
+
+Os scripts SQL no repositório realizam as seguintes operações:
+
+1. **Criação do Banco de Dados e Tabelas**:
+   - Cria o banco de dados `GerenciamentoEventos` e as tabelas `Eventos`, `Participantes`, e `Inscricoes`.
+
+2. **Inserção de Dados**:
+   - Adiciona eventos, participantes e inscrições iniciais.
+
+3. **Consultas e Relatórios**:
+   - Mostra todos os eventos disponíveis.
+   - Lista participantes inscritos em um evento específico.
+   - Verifica eventos nos quais um participante está inscrito.
+   - Lista participantes que se inscreveram em mais de um evento.
+
+4. **Atualizações e Deleção**:
+   - Atualiza informações de eventos e participantes.
+   - Remove eventos passados e cancela inscrições.
+
+## Uso
+
+1. Clone este repositório.
+2. Execute os scripts SQL fornecidos em seu banco de dados MySQL para criar o esquema e inserir dados.
+3. Utilize as consultas SQL para interagir com o banco de dados e gerar relatórios conforme necessário.
+
+## Contribuições
+
+Se você deseja contribuir para este projeto, por favor, faça um fork do repositório e envie um pull request com suas alterações.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
